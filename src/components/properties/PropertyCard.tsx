@@ -1,6 +1,5 @@
 import React from 'react';
 import type { Property } from '../../data/mockProperties';
-import { useLanguage } from '../../context/LanguageContext';
 import { Maximize, Bed, Bath, MapPin } from 'lucide-react';
 import './PropertyCard.css';
 
@@ -9,8 +8,6 @@ interface PropertyCardProps {
 }
 
 const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
-  const { language } = useLanguage();
-  
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('is-IS', { style: 'currency', currency: 'ISK', maximumFractionDigits: 0 }).format(price);
   };
